@@ -1,0 +1,434 @@
+header {
+  width: 100%;
+  height: 100px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wrapper {
+  width: 1280px;
+  /*100% 넓이의 header내에 1280px 크기로 감싼 박스개체를 중앙에 둔다*/
+  margin: 0 auto;
+  /*박스 개체의 중앙 정렬*/
+}
+
+header h1 {
+  float: left;
+  /*float는 가상으로 위에 띄우는 개념이며 IE에 호환되고, left와 right외에는 존재하지 않는다*/
+  margin: 30px 0 250px 0;
+  font-size: 0;
+  line-height: 0;
+  /*h1 태그가 글자가 없고 이미지만 있더라도 글자 크기와 행간때문에 밀리는 현상이 발생될 수 있기 때문에 여백을 아예 없애기 위해 글자 크기 행간 속성 0으로 만들고 이미지 크기만 바로 사용*/
+}
+
+header h1 a {
+  display: block;
+}
+
+header .gnb {
+  float: left;
+  margin-top: 15px;
+  margin-left: 100px;
+}
+
+header .gnb ul li {
+  float: left;
+}
+
+header .gnb ul li a {
+  display: block;
+  padding: 25px;
+  color: #fff;
+  font-size: 20px;
+}
+
+header .gnb button {
+  display: none;
+}
+
+header .tnb {
+  float: right;
+  margin-top: 30px;
+}
+
+header .tnb button {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+header .tnb button span {
+  display: none;
+}
+
+header.fixed .gnb button {
+  color: #111;
+}
+
+header.fixed {
+  position: fixed;
+  background-color: #fff;
+}
+
+header.fixed .gnb ul li a {
+  color: #111;
+}
+
+header.fixed .tnb button i {
+  color: #111;
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    height: 50px;
+  }
+
+  header h1 {
+    margin: 15px 0 0 10px;
+    /*pc사이즈의 절반 크기*/
+  }
+
+  header h1 a img {
+    width: 50px;
+  }
+
+  header .gnb {
+    float: left;
+    padding: 0 0 0 450px;
+  }
+
+  header .gnb button {
+    display: block;
+  }
+
+  header .gnb button i {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    /* font-weight: 300; */
+  }
+
+  header .gnb button span {
+    display: none;
+  }
+
+  header .gnb ul {
+    display: none;
+    /*모바일에서는 네비게이션 메뉴 안 나옴*/
+  }
+
+  header .fixed .tnb button i {
+    color: #111;
+  }
+}
+
+/* 헤더 끝 */
+
+.visual {
+  position: relative;
+  height: 1000px;
+  /* background: url() no-repeat;
+  모든 옵션 가능 */
+  background-image: url(../images/visual_bg.png);
+  /*이미지만*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.visual::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+  /*visual 클래스가 실행되기 전에 반복할 내용*/
+}
+
+/* visual 클래스가 실행되기 전에 실행하게 하는 것(반복) */
+
+.visual .inner0 {
+  position: relative;
+  z-index: 1;
+}
+
+.visual h2 {
+  padding: 500px 0 30px 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.visual span {
+  display: block;
+}
+
+@media screen and (max-width: 640px) {
+  .visual {
+    height: 400px;
+  }
+
+  .visual::before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  /* .visual .inner0 {
+    margin-left: -500px;
+  } */
+
+  .visual h2 {
+    padding: 250px 0 15px 0;
+    margin-left: -800px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .visual p {
+    display: none;
+  }
+}
+
+/* 비주얼 끝 */
+
+/*wrapper가 태그 내에 클래스가 있으면 굳이 안 써도 됨*/
+
+.biz .inner1 {
+  margin: 100px 0 70px 0;
+}
+
+.biz .inner2 {
+  margin: 70px 0 70px 0;
+}
+
+.biz .inner3 {
+  margin: 0 0 70px 0;
+}
+
+.biz .fleft img {
+  float: left;
+  margin: 0 100px 0 0;
+}
+
+.biz .fright img {
+  float: right;
+  margin: 0 0 0 100px;
+}
+
+.biz h2 {
+  margin: 20px 0 10px 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.biz strong {
+  display: block;
+  margin-right: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.biz p {
+  margin-top: 10px;
+}
+
+.biz .link {
+  margin-top: 30px;
+}
+
+.biz .link ul li {
+  float: left;
+  /*세로로 ul li 배치된 걸 가로로 띄움*/
+  width: 150px;
+  margin: 0 10px 10px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.biz .link ul li a {
+  display: block;
+  /*a태그는 인라인 태그라 글자 길이만큼만 링크로 잡히는데, 그 일대 패딩이나 마진까지 포함하는 영역전체를 설정하기 위해*/
+  letter-spacing: -0.05em;
+  line-height: 30px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .biz .inner1 {
+    margin: 50px 0 35px 0;
+  }
+
+  .biz .inner2 {
+    margin: 35px 0 35px 0;
+  }
+
+  .biz .inner3 {
+    margin: 0 0 35px 0;
+  }
+
+  .biz .fleft img {
+    float: none;
+    margin: 0;
+  }
+
+  .biz .fleft .yonam {
+    float: none;
+    margin: 0;
+  }
+
+  .biz .fright img {
+    float: none;
+    margin: 0;
+  }
+
+  .biz .fleft .yonam {
+    float: none;
+    margin: 0;
+  }
+
+  .biz h2 {
+    margin: 20px 0 10px 30px;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .biz strong {
+    display: block;
+    margin-left: 30px;
+    /* margin-right: 15px; */
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .biz p {
+    display: none;
+  }
+
+  .biz .link ul li {
+    width: 100px;
+    margin-left: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .biz .link ul li a {
+    display: block;
+    /*a태그는 인라인 태그라 글자 길이만큼만 링크로 잡히는데, 그 일대 패딩이나 마진까지 포함하는 영역전체를 설정하기 위해*/
+    letter-spacing: -0.05em;
+    line-height: 30px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+/*비즈 끝*/
+
+.vision {
+  position: relative;
+  height: 360px;
+  /* margin-top: 50px; */
+  background-image: url(../images/purp_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.vision::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+}
+
+.vision .contents {
+  position: relative;
+  z-index: 1;
+}
+
+.vision h3 {
+  font-size: 40px;
+  line-height: 1.2;
+  padding: 100px 0 50px 0;
+  letter-spacing: -0.1em;
+}
+
+.vision h3::before {
+  background-image: url(../images/prop_quot_left.png);
+  content: "";
+  top: 80px;
+  left: 270px;
+}
+
+.vision h3::after {
+  background-image: url(../images/prop_quot_right.png);
+  content: "";
+  right: 250px;
+  bottom: 80px;
+}
+
+.vision h3::before,
+.vision h3::after {
+  position: absolute;
+  width: 57px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 130px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.vision h3 p {
+  position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .vision {
+    position: relative;
+    /* width: 640px; */
+    /* height: 360px; */
+    /* margin-top: 100px; */
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .vision::before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .vision .wrapper {
+    width: auto;
+  }
+
+  .vision h3 {
+    font-size: 20px;
+    padding: 150px 0 30px 0;
+  }
+
+  .vision h3::before,
+  .vision h3::after {
+    position: absolute;
+    width: 57px;
+    height: 50px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 50px -160px -30px -180px;
+  }
+
+  .vision h3 p {
+    display: block;
+  }
+}
+
+/*비전 끝*/
